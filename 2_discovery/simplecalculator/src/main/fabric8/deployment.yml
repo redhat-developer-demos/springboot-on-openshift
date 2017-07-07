@@ -1,0 +1,13 @@
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  labels:
+    hystrix.enabled: "true"
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - env:
+        - name: "JAVA_OPTIONS"
+          value: "-Xms256m -Xmx256m"

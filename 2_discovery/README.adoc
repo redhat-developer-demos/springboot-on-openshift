@@ -1,0 +1,11 @@
+= Spring Cloud Kubernetes - Discovery Demo
+
+=== link:./simplecalculator/README.adoc[Simple Calculator]
+
+A simple calculator Spring Boot demo application which will be used in discovering the service using https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes]
+
+=== link:./helloboot-discovery/README.adoc[Hello Boot Discovery]
+
+A simple Spring Boot application that uses Netflix Ribbon for Client side load balancing and discoverying the "Calculator" service using https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes]
+
+--END--

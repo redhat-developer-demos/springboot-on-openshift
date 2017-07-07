@@ -1,0 +1,4 @@
+
+= Java Microservices with Spring Boot and Kubernetes
+
+This repository holds all the demos that were done during the https://goo.gl/fMDoOP[Kubernetes and OpenShift] bangalore meetup on Jun 10 2017. You can find the slides using during the talk https://goo.gl/UNmqDz[here]
