@@ -1,4 +1,12 @@
 
-= Java Microservices with Spring Boot and Kubernetes
+= Java Microservices with Spring Boot on Kubernetes/OpenShift
 
-This repository holds all the demos that were done during the https://goo.gl/fMDoOP[Kubernetes and OpenShift] bangalore meetup on Jun 10 2017. You can find the slides using during the talk https://goo.gl/UNmqDz[here]
+
+This repository holds the demo sources of Spring Boot on Kubernetes/OpenShift.  The demos cover the basics of getting started with Spring Boot on Kubernetes/OpenShift with you being able to do:
+
+* Simple HelloWorld
+* Doing Discovery and Load Balancing of Spring Boot services via Kubernetes Services 
+* Using https://maven.fabric8.io/[fabric8-maven-plugin] to do Canary Deployment
+
+== Pre-requisite
+Before you try the demos download and setup either https://github.com/kubernetes/minikube[minikube] or https://docs.openshift.org/latest/minishift/index.html[minishift]
