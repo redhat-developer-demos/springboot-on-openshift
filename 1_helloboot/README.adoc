@@ -7,7 +7,7 @@
 * Install
 https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli[Spring Boot CLI]
 
-* Unzip/Untar it and add spring-1.5.3.RELEASE/bin to your path
+* Unzip/Untar it and add spring-1.5.7.RELEASE/bin to your path
 
 == Create Simple Spring Boot project:
 
@@ -66,7 +66,7 @@ CRTL + C to stop the running application, if you have minishift running then do 
 
 [source,sh]
 ----
-./mvnw io.fabric8:fabric8-maven-plugin:3.4.1:setup <1>
+./mvnw io.fabric8:fabric8-maven-plugin:3.5.30:setup <1>
 
 ./mvnw clean fabric8:deploy <2>
 ----

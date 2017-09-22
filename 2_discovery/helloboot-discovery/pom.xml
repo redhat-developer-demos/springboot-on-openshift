@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.3.RELEASE</version>
+        <version>1.5.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-kubernetes-netflix</artifactId>
-            <version>0.2.0.BUILD-SNAPSHOT</version>
+            <version>0.2.0.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -76,7 +76,7 @@
       <plugin>
         <groupId>io.fabric8</groupId>
         <artifactId>fabric8-maven-plugin</artifactId>
-        <version>3.4.1</version>
+        <version>3.5.30</version>
         <executions>
           <execution>
             <id>fmp</id>

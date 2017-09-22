@@ -10,3 +10,27 @@ This repository holds the demo sources of Spring Boot on Kubernetes/OpenShift.  
 
 == Pre-requisite
 Before you try the demos download and setup either https://github.com/kubernetes/minikube[minikube] or https://docs.openshift.org/latest/minishift/index.html[minishift]
+
+== Start minishift
+
+[source,sh]
+----
+ minishift --profile springboot_msa_on_k8s --memory=4096 --cpus=2 start <1>
+---- 
+
+ <1> Start a minishift with 4GB memory and 2 CPUS and profile name called `springboot_msa_on_k8s`
+
+ == Stop minishift
+
+[source,sh]
+----
+ minishift stop
+---- 
+
+[TIP]
+====
+
+* to setup DOCKER* variables in the current shell execute command `$(eval minikube docker-env)`
+* to setup OpenShift environment variables in the current shell execute command `$(eval minikube oc-env)`
+
+====

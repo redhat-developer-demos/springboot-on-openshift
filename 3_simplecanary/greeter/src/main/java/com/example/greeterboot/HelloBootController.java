@@ -11,6 +11,6 @@ public class HelloBootController {
 
     @GetMapping("/hello")
     public String hello() {
-        return String.format("Canary Hello from %s", System.getenv().getOrDefault("HOSTNAME", "localhost"));
+        return String.format("Hello from %s", System.getenv().getOrDefault("HOSTNAME", "localhost"));
     }
 }
