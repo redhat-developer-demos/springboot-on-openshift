@@ -85,6 +85,85 @@ You can view the URL from OpenShift console, and access the application via brow
 
 image::OpenShift_Web_Console.png[]
 
+=== Debugging Application
+
+==== Add property to application.properties
+
+[source]
+----
+message.prefix=Hello! <1>
+----
+<1> a simple prefix to the messages, we can then use this property for debug
+
+==== Update Hello REST API
+
+[source,java]
+----
+
+package com.example.helloboot;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Simple REST call that says from where its invoked from
+ */
+@RestController
+public class HelloBootController {
+
+    @GetMapping("/whereami")
+    public String whereami(@Value("${message.prefix}") String prefix) { <1>
+        return String.format("% from %s", prefix, System.getenv().getOrDefault("HOSTNAME", "localhost"));
+    }
+}
+
+----
+
+<1> Inject `prefix` property from `application.properties`
+
+==== Add deployment.yaml
+
+When we <<app-deploy,Deployed>> the application, the application will not be enabled for debug by default, to enable debug
+we need to add an env variable `JAVA_DEBUG_ENABLE` to the deployment.
+
+Copy and paste the following content to a file called `deployment.yaml` in **$PROJECT_HOME/src/main/fabric8**
+
+[[source,yaml]
+----
+spec:
+  template:
+    containers:
+      spec:
+        - env:
+          - name: JAVA_ENABLE_DEBUG <1>
+            value: true
+
+----
+<1> Sets the Environment variable to enable debugging
+
+==== Connecting and Debugging
+
+<<app-deploy,ReDeploy>> the application with `JAVA_ENABLE_DEBUG` enabled, once the application is deployed
+successfully, run the following command
+
+[source,sh]
+----
+./mvw fabric8:debug <1>
+----
+
+<1> This will do https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/[port-forward]
+the debug port from your Kubernetes/OpenShift pod to localhost. The default port of the debugger is `5005`.  The default debug port can be overridden usign the Java system property `fabric8.debug.port`
+
+(e.g.)
+
+[source,sh]
+----
+./mvw fabric8:debug -Dfabric8.debug.port=6005
+----
+
+Now you can connect to the Debugger with your favorite IDE
+
+
 
 -- END --
 

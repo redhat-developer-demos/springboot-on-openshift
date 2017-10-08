@@ -4,7 +4,7 @@
 
 This repository holds the demo sources of Spring Boot on Kubernetes/OpenShift.  The demos cover the basics of getting started with Spring Boot on Kubernetes/OpenShift with you being able to do:
 
-* Simple HelloWorld
+* Simple HelloWorld  - Deploy and Debug Spring Boot Application in Kubernetes
 * Doing Discovery and Load Balancing of Spring Boot services via Kubernetes Services 
 * Using https://maven.fabric8.io/[fabric8-maven-plugin] to do Canary Deployment
 
