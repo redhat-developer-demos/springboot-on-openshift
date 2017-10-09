@@ -1,0 +1,4 @@
+
+= Java Microservices with Spring Boot on Kubernetes/OpenShift
+
+This repository has been relocated to https://github.com/redhat-developer-demos/springboot-on-openshift
