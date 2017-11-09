@@ -1,4 +1,3 @@
-
 node("mavenwithnexus") {
   checkout scm
 
