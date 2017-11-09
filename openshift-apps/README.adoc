@@ -1,0 +1,12 @@
+
+
+= Create Nexus PV 
+
+Before Deploying Nexus the Persistent Volume to hold nexus needs to be created,
+
+./create_pv.sh <storage-name> <storage-container> <blob-name> <numbers> <size-in-gb>
+
+[source,sh]
+====
+./create_pv.sh mystorageaccount vhds apppv 7 5
+====
