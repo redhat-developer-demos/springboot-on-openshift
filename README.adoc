@@ -22,7 +22,7 @@ Before you try the demos download and setup https://docs.openshift.org/latest/mi
 
 <1> Start a minishift with 4GB memory and 2 CPUS and profile name called `springboot_msa_on_k8s`
 
- == Stop minishift
+== Stop minishift
 
 [source,sh]
 ----
