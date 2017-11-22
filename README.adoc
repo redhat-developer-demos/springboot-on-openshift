@@ -1,4 +1,51 @@
 
 = Java Microservices with Spring Boot on Kubernetes/OpenShift
 
-This repository has been relocated to https://github.com/redhat-developer-demos/springboot-on-openshift
+This repository holds the demo sources of Spring Boot on Kubernetes/OpenShift.  The demos cover the basics of 
+getting started with Spring Boot on Kubernetes/OpenShift covering the following,
+
+* https://github.com/workspace7/helloboot[Simple HelloWorld]  - Deploy and Debug Spring Boot Application in Kubernetes
+* Doing Discovery and Load Balancing of Spring Boot services via Kubernetes Services
+  ** https://github.com/workspace7/simplecalculator[Simple Calculator] - the service that will be discovered and consumed
+  ** https://github.com/workspace7/helloboot-discovery[Helloboot Discovery] - consumer simple calculator service 
+* Using https://maven.fabric8.io/[fabric8-maven-plugin] to do https://github.com/workspace7/greeter[Canary Deployment]
+
+== Pre-requisite
+Before you try the demos download and setup https://docs.openshift.org/latest/minishift/index.html[minishift] or https://developers.redhat.com/products/cdk/overview/[CDK]
+
+== Start minishift
+
+[source,sh]
+----
+ minishift --profile springboot_msa_on_k8s --memory=4096 --cpus=2 start <1>
+----
+
+<1> Start a minishift with 4GB memory and 2 CPUS and profile name called `springboot_msa_on_k8s`
+
+ == Stop minishift
+
+[source,sh]
+----
+ minishift stop
+---- 
+
+[TIP]
+====
+
+* to setup DOCKER* variables in the current shell execute command `$(eval minikube docker-env)`
+* to setup OpenShift environment variables in the current shell execute command `$(eval minikube oc-env)`
+
+====
+
+== Common commands
+
+[source,sh]
+----
+ ./mvnw fabric8:deploy <1>
+ ./mvnw fabric8:undeploy <2>
+ ./mvnw fabric8:resource <3>
+---- 
+
+<1> build and deploy the maven project to OpenShift/Kubernetes
+<2> undeploy the maven project if it exits in OpenShift/Kubernetes
+<3> Generate the Kubernetes/OpenShift manifests
